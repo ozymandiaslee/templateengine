@@ -44,6 +44,8 @@ const teamMenu = () => {
         idArray.push(id);
 
         createTeam();
+        console.log(teamMembers)
+        console.log(idArray);
     }
 
     const addEngineer = async() => {
@@ -62,6 +64,8 @@ const teamMenu = () => {
         idArray.push(id);
     
         createTeam();
+        console.log(teamMembers)
+        console.log(idArray);
     }
 
     const addIntern = async () => {
@@ -80,6 +84,8 @@ const teamMenu = () => {
         idArray.push(id);
 
         createTeam();
+        console.log(teamMembers)
+        console.log(idArray);
     }
 
     const createTeam = async () => {
@@ -88,7 +94,7 @@ const teamMenu = () => {
                 type: 'list',
                 name: 'memberChoice',
                 message: 'Which type of team member would you like to add?',
-                choices: ['Engineer', 'Intern', "I don't want to add anymore team members"]
+                choices: ['Engineer', 'Intern', 'Manager', "I don't want to add anymore team members"]
             }
         ]);
 
@@ -99,11 +105,16 @@ const teamMenu = () => {
             case 'Intern':
                 addIntern();
                 break;
+            case 'Manager':
+                createManager();
+                break;
             default:
-                buildTeam();
+                createTeam();
                 break;
         }
     }
+    
+    createTeam();
     
 }
 
